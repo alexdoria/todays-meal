@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>What to cook?</title>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <h1>Today's meal</h1>
+</div>
+<form class="" action="{{ url_for('my_meals') }}" method="post">
+    <div class="row">
+        <div class="col-10">
+            <input type="text" class="form-control" name="ingredients">
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary" type="submit"><span class="fui-plus-circle"></span></button>
+        </div>
+
+    </div>
+</form>
+{% endblock %}

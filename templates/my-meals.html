@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>My Meals choices</title>
+{% endblock %}
+
+{% block content %}
+<h1>What can I cook with ...</h1>
+<div class="row text-center">
+    {% for meal in meals %}
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ meal.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ meal.title }}</h5>
+                <p class="card-text"></p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
