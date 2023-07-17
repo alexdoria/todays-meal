@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>My Meals choices</title>
+{% endblock %}
+
+{% block content %}
+<h1>{{ meal.title }} </h1>
+<div class="row text-center">
+    <div><img src="{{ meal.image }}" alt=""></div>
+    <div>
+        <p>
+            {{ meal.instructions }}
+        </p>
+    </div>
+</div>
+{% endblock %}

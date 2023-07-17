@@ -8,7 +8,7 @@
 <div class="row">
     <h1>Today's meal</h1>
 </div>
-<form class="" action="{{ url_for('my_meals') }}" method="post">
+<form class="" action="{{ url_for('home') }}" method="post">
     <div class="row">
         <div class="col-10">
             <input type="text" class="form-control" name="ingredients">
@@ -17,6 +17,23 @@
             <button class="btn btn-primary" type="submit"><span class="fui-plus-circle"></span></button>
         </div>
 
+    </div>
+    <div class="row py-3">
+        {% if meals %}
+            {% for meal in meals %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="{{ meal.image }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ meal.title }}</h5>
+                            <p class="card-text"></p>
+                            <a href="{{ url_for('complete_meal', id=meal.id) }}" class="btn btn-primary">Load</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        {% endif %}
     </div>
 </form>
 {% endblock %}
