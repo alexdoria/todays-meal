@@ -5,9 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="row">
-    <h1>Today's meal</h1>
-</div>
+<h1>Today's meal</h1>
 <form class="" action="{{ url_for('home') }}" method="post">
     <div class="row">
         <div class="col-10">
@@ -18,22 +16,26 @@
         </div>
 
     </div>
-    <div class="row py-3">
-        {% if meals %}
-            {% for meal in meals %}
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <img src="{{ meal.image }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ meal.title }}</h5>
-                            <p class="card-text"></p>
-                            <a href="{{ url_for('complete_meal', id=meal.id) }}" class="btn btn-primary">Load</a>
+</form>
+<div class="row py-3">
+    {% if meals %}
+        {% for meal in meals %}
+                <div class="card mb-3">
+                    <div class="row g-0">
+                       <div class="col-md-4">
+                            <img src="{{ meal.image }}" class="img-fluid rounded-start" alt="...">
+                       </div> 
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ meal.title }}</h5>
+                                <p class="card-text"></p>
+                                <a href="{{ url_for('complete_meal', id=meal.id) }}" class="btn btn-primary">Load</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+        {% endfor %}
 
-        {% endif %}
-    </div>
-</form>
+    {% endif %}
+</div>
 {% endblock %}

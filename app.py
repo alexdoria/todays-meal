@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request
 from settings import get_config
 import requests
+import json
 
 cfg = get_config.get_config()
 app = Flask(__name__)
@@ -29,9 +30,8 @@ def complete_meal(id):
     url = f"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/{id}/information"
     r = requests.get(url=url, headers=headers)
     meal = r.json()
-    print(meal)
     return render_template('complete-meal.html', meal=meal)
     
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

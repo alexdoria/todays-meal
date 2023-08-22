@@ -5,9 +5,11 @@
 
 {% block content %}
 <h1>{{ meal.title }} </h1>
-<div class="row text-center">
-    <div><img src="{{ meal.image }}" alt=""></div>
-    <div>
+<div class="row">
+    <div class="col">
+        <img src="{{ meal.image }}" alt="">
+    </div>
+    <div class="col">
         <p>
             {{ meal.instructions }}
         </p>
