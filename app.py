@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request
 from settings import get_config
 import requests
-import json
+
 
 cfg = get_config.get_config()
 app = Flask(__name__)
