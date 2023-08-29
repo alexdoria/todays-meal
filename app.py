@@ -1,9 +1,9 @@
 from flask import Flask, render_template, url_for, request
-from settings import get_config
+from settings import app_config
 import requests
 
 
-cfg = get_config.get_config()
+cfg = app_config.get_config()
 app = Flask(__name__)
 
 headers = {
