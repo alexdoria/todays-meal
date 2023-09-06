@@ -9,7 +9,7 @@ def get_config():
             config = json.load(cfg)
     except FileNotFoundError:
         print("Configuration file was not found, please type your API credentials")
-        host = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients"
+        host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         key = input("Type your API KEY: ")
         config = {
             "rapidapi": {
